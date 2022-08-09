@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713097391605">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.713354728136">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -21,22 +21,20 @@
     <meta property="og:url" content="/sp3275/instructions/">
     <meta property="og:title" content="Setting up SSH">
     <meta property="og:description" content="In this little write-up, certain steps are just for your information. They will be noted by a gray information box, like the one below!">
-    <meta property="og:image" content="/sp3275/resources/rpi.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/sp3275/instructions/">
     <meta property="twitter:title" content="Setting up SSH">
     <meta property="twitter:description" content="In this little write-up, certain steps are just for your information. They will be noted by a gray information box, like the one below!">
-    <meta property="twitter:image" content="/sp3275/resources/rpi.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.713097391605" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.713354728136" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.713097391605" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.713354728136" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.713097391605" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.713354728136" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -245,7 +243,11 @@
 </doc-anchor-target>
 <p>Welcome to your very first lesson on Secure SHell (SSH) networking!</p>
 <p>You might be wondering why you&#x27;d be learning this as part of The Earth. Well, it turns out, working with a monitor and a keyboard in the field is difficult. It&#x27;ll be easier to use a keyboard and mouse that we carry around in our pockets.. hey, that&#x27;s a phone, isn&#x27;t it?</p>
-<p>(Diagram of connecting Pi to the phone)</p>
+<p><figure class="content-center">
+    <img src="../resources/wireless-control2.png" alt="Wireless Control with Raspberry Pi. The phone acts as the router and the client, and the Pi acts as the server. A hotspot is created so they are on the same " />
+    <figcaption class="caption"><strong>Wireless Control with Raspberry Pi.</strong> The phone acts as the router and the client, and the Pi acts as the server. A hotspot is created so they are on the same </figcaption>
+</figure>
+</p>
 <doc-anchor-target id="interface">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#interface">#</doc-anchor-trigger>
@@ -253,7 +255,11 @@
     </h3>
 </doc-anchor-target>
 <p>We&#x27;re used to an interactive interface. In the world of programming, this is called a GUI -- or Graphical User Interface. Instead, we&#x27;ll be using a text based interface, in the command line. This is Secure Shell!</p>
-<p>(Picture of Secure Shell Terminal)</p>
+<p><figure class="content-center">
+    <img src="../resources/terminal-interface.png" alt="Command Line Interface" />
+    <figcaption class="caption"><strong>Command Line Interface</strong></figcaption>
+</figure>
+</p>
 <p>In SSH, there is both a server and a client. Just imagine -- the server is the brains doing the work, the client is the one talking to you. It&#x27;ll be easy to identify that the Pi is the server, and your phone is the client!</p>
 <doc-anchor-target id="basic-networking">
     <h3>
@@ -530,15 +536,15 @@
 <ul>
 <li>To login to a computer, you need to know where it is first!
 This is called an IP Address. <a id="fnref:2" href="#fn:1" class="footnote-ref"><sup>1</sup></a></li>
-<li>Computers also have different users too, so you&#x27;ll need to know that too.
-We use <code v-pre>student</code> for this module!</li>
-<li>Each user has a password. For the <code v-pre>student</code> user, it&#x27;s set to <code v-pre>SPS</code>.</li>
+<li>Computers also have different users, each with a different username, so you&#x27;ll need to know that too.
+We use <code v-pre>pi</code> for this module!</li>
+<li>Each user has a password. For the <code v-pre>pi</code> user, it&#x27;s set to <code v-pre>SPS</code>.</li>
 </ul>
 <p>Now, we have to specify this to our Client!</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">ssh username@127.0.0.1</code></pre>
+<pre class="language-none"><code v-pre class="language-none">ssh pi@127.0.0.1</code></pre>
 </doc-codeblock></div>
-<p>In this case, <code v-pre>username</code> is our username, and <code v-pre>127.0.0.1</code> is the IP Address.</p>
+<p>In this case, <code v-pre>pi</code> is our username, and <code v-pre>127.0.0.1</code> is the IP Address.</p>
 <p>After telling this to a client, it will ask the server for permission to log in. Of course, the server would ask for a password, and that&#x27;s the next thing you&#x27;ll see.
 Don&#x27;t worry, you won&#x27;t see stars when you type in your password, but that&#x27;s alright.</p>
 <hr />
@@ -605,7 +611,7 @@ It should say 1 connection.</li>
 </div>
 <ol start="4">
 <li><p>In the text bar up top, click it, then key in:
-<code v-pre>ssh student@172.20.10.2</code></p>
+<code v-pre>ssh pi@172.20.10.2</code></p>
 </li>
 <li><p>You should have a pop up asking for a password. Key in the default password <code v-pre>SPS</code>.</p>
 </li>
@@ -624,7 +630,9 @@ It should say 1 connection.</li>
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Can&#x27;t find the host?</h5>
-<p>Don&#x27;t panic, the device may not be the first thing connecting to your hotspot.. Try with different IP addresses, with the same prefix!</p>
+<p>Don&#x27;t panic, the device may not be the first thing connecting to your hotspot.. Try with different IP addresses, with the same prefix!
+It should look like:
+<code v-pre>ssh pi@172.20.10.n</code>, where <code v-pre>n</code> is some number between 2 to 8.</p>
         </div>
     </div>
 </div>
@@ -634,13 +642,35 @@ It should say 1 connection.</li>
 <doc-tab id="android">
 <template #title>Android <span class="docs-emoji">&#x1F4DE;</span></template>
 <p>Congratulations! A tried and tested route.</p>
+<ol>
+<li>Check if the Raspberry Pi has successfully connected to your hotspot. Do so by checking in Settings &gt; Connections &gt; Mobile hotspot and tethering &gt; Mobile Hotspot, and checking the connected devices at the bottom.</li>
+</ol>
+<p>You should see SP3275 as a device.</p>
+<ol start="2">
+<li><p>Tap on SP3275. Locate its IP address. Note this down!</p>
+</li>
+<li><p>Go to Termius.</p>
+</li>
+<li><p>In the sidebar, go to Terminals.</p>
+</li>
+<li><p>In the text bar up top, click it, then key in:
+<code v-pre>ssh pi@IP Address</code> where <code v-pre>IP Address</code> is what you found earlier.</p>
+</li>
+</ol>
+<p>It should look like: <code v-pre>ssh pi@192.168.1.1</code>.</p>
+<p>Congratulations, you&#x27;re in! Absolute <code v-pre>H A C K E R !</code></p>
+<p><em>Continue on to Step 2 -- SSH Process.</em></p>
 </doc-tab>
 </doc-tabs>
 <ol start="2">
 <li>SSH process</li>
 </ol>
 <p>Now that you are logged in to the pi, you should see something like this!</p>
-<p>(Picture of SSH interface)</p>
+<p><figure class="content-center">
+    <img src="../resources/termius-interface.jpg" alt="SSH Interface on Termius" />
+    <figcaption class="caption">SSH Interface on Termius</figcaption>
+</figure>
+</p>
 <p>This now serves as the primary way to communicate with the Pi.</p>
 <p>Just like any graphical interface, we are currently in the home folder.</p>
 <div class="flex mb-6">
@@ -660,8 +690,8 @@ It should say 1 connection.</li>
 <p>How do you check where you are in the filesystem?</p>
 <p><code v-pre>pwd</code>, or Path to Working Directory, will show you where you are currently at (Working Directory)
 <figure class="content-center">
-    <img src="" alt="The command line indicates that we're currently in the folder" />
-    <figcaption class="caption">The command line indicates that we&#x27;re currently in the <code v-pre>folder</code></figcaption>
+    <img src="../resources/terminal-interface.png" alt="The command line indicates that we're currently in the folder matthewsung" />
+    <figcaption class="caption">The command line indicates that we&#x27;re currently in the folder <code v-pre>matthewsung</code></figcaption>
 </figure>
 </p>
 <hr />
@@ -717,6 +747,24 @@ It should say 1 connection.</li>
     </div>
 </div>
 <p>You should now see something like this, showing that the data is being logged! When the numbers flash, a new reading has been taken and it&#x27;s highlighting the changes since the last readings.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>What&#x27;s the difference between <code v-pre>live_copy</code> and <code v-pre>live_results</code>?</h5>
+<p><code v-pre>live_copy</code> copies information into the attached USB drive, while <code v-pre>live_results</code> just shows it.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="gracefully-shutting-down">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#gracefully-shutting-down">#</doc-anchor-trigger>
@@ -755,7 +803,7 @@ It should say 1 connection.</li>
 <li>Create your personal hotspot.</li>
 <li>Open Termius and navigate to Terminal.</li>
 <li>SSH into the Pi.
-<code v-pre>ssh student@(ip address)</code>
+<code v-pre>ssh pi@(ip address)</code>
 Password is <code v-pre>SPS</code>.</li>
 <li>Run the data copying script.
 <code v-pre>./live_copy.sh</code></li>
