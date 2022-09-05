@@ -13,6 +13,7 @@ author:
 # Moving with Cameras
 
 This lesson is a short one on static cameras with pan, tilt and roll.
+
 Second part of the lesson is with gimbal usage, for smoother camera shots.
 
 ## Lesson Plan
@@ -33,7 +34,9 @@ Looking for some inspiration? You can look into a few:
 
 ## Movement Shoot ideas
 Trucking along a coridoor to illustrate movement into a room
+
 Dolly backwards, with subject following camera
+
 Over The Shoulder, camera following subject
 
 Orbit - pointing at subject in center, camera moving in a circle around subject
